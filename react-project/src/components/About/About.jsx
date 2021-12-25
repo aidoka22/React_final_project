@@ -2,6 +2,8 @@ import React from 'react'
 
 import photo from '../../assets/Shopping_about.jpg'
 import photo2 from '../../assets/About_photo.jpg'
+import photo3 from '../../assets/need.jpg'
+
 import useStyles from './styles';
 
 
@@ -33,13 +35,11 @@ const About = () => {
         </div>
         <div className={classes.imgContainer2}>
             <div className={classes.announcing}>
-              <img alt="" className={classes.imageAnnounce} src="https://unice.pixelstrapthemes.vercel.app/assets/images/event/1.jpg" />
-              <img alt=""className={classes.imageAnnounce} src="https://unice.pixelstrapthemes.vercel.app/assets/images/event/1.jpg" />
-              <img alt="" className={classes.imageAnnounce} data-tilt="true" data-tilt-max="3" data-tilt-perspective="500" data-tilt-speed="400" src={photo2} /></div>
-        </div>
-        <div className={classes.textContainer}>
-          <div className={classes.text3}>
-            <div className={classes.format}>
+              <img alt="" className={classes.imageAnnounce1} src={photo3} />
+              <img alt=""className={classes.imageAnnounce2} src={photo3} />
+              <img alt="" className={classes.imageAnnounce3} src={photo2} /></div>
+          <div className={classes.textContainer}>
+            
               <div className={classes.formatS}>
                 <h6 className={classes.text3}><span>event progress</span></h6>
               </div>
@@ -47,15 +47,9 @@ const About = () => {
                 <h3 className={classes.text4}>Welcome To Clothe Shop</h3>
               </div>
               <div className={classes.formatSub}>
-                <p className={classes.title3}>With the internet came many wonders. It melted barriers, and before you knew,
-                  things from far off lands were getting delivered right to your doorstep. Clothe Shop was a pioneer in
-                  starting an online business community that catered to women’s fashion needs way before this turned
-                  into an entire industry. Clothe Shop has taken it a notch higher by shipping clothes that are made in
-                  the US, UK, China, Europe, etc., and delivering them to India and around the globe in just a matter of
-                  a few days. </p>
+                <p className={classes.title3}>When shopping, most people have a short-list of the best online clothing stores that they refer back to time and time again. However, in those (not so) rare instances when you can’t find exactly what you’re looking for at your go-to destinations, coming up with alternatives on the spot can be tough. The good news is that there are more than enough options to choose from. So much so, that it can be overwhelming. So let's begin with that stuff </p>
               </div>
-              <a className={classes.botton} href="#">READ MORE</a>
-            </div>
+              <div className={classes.button}>START</div>
           </div>
         </div>
       </div>

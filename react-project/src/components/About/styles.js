@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import photo from '../../assets/About3.jpg'
+import photo from '../../assets/1.jpg'
 
 export default makeStyles((theme) => ({
   container: {
@@ -33,7 +33,7 @@ export default makeStyles((theme) => ({
     letterSpacing:3,
   },
   container2:{
-    height:600,
+    height: 570,
     color: '#FFFFFF',
     fontSize: 20,
     fontWeight: 500,
@@ -47,9 +47,10 @@ export default makeStyles((theme) => ({
     display: 'block',
     boxSizing: 'border-box',
     marginLeft:34,
+    marginBottom:5,
   },
   container3: {
-    maxWidth: 500,
+    maxWidth: 1050,
     width: '100%',
     paddingRight: 15,
     paddingLeft: 15,
@@ -74,8 +75,9 @@ export default makeStyles((theme) => ({
   },
   imgContainer2: {
     position: 'relative',
-    paddingRight:15,
-    paddingLeft:15,
+    paddingRight:305,
+    paddingLeft:5,
+    marginLeft:-50,
     textAlign:'right',
   },
   announcing :{
@@ -86,14 +88,60 @@ export default makeStyles((theme) => ({
     marginBottom: 60,
     boxSizing: 'border-box',
   },
-  imageAnnounce:{
+  imageAnnounce1:{
+    marginTop:40,
+    marginLeft:-5,
     borderRadius: 15,
     overflow: 'hidden',
-    maxWidth: 400,
-    height: 'auto',
+    maxHeight: 400,
+    width: 'auto',
     verticalAlign: 'middle',
     borderStyle: 'none',
-  }
+    opacity: 0.7,
+  },
+  imageAnnounce2:{
+    marginTop:20,
+    marginLeft:-2,
+    borderRadius: 15,
+    overflow: 'hidden',
+    height: 400,
+    width: 'auto',
+    verticalAlign: 'middle',
+    opacity: 0.7,
+  },
+  imageAnnounce3:{
+    borderRadius: 15,
+    overflow: 'hidden',
+    maxHeight: 400,
+    width: 280,
+    verticalAlign: 'middle',
+    borderStyle: 'none',
+    zIndex:1
+  },
+  textContainer: {
+    position: 'absolute',
+    marginTop:-580,
+    marginLeft:440,
+    width:'100%',
+    paddingRight: 15,
+    paddingLeft: 15,
+    textAlign: 'left',
+    marginBottom: 0,
+    zIndex:2,
+  },
+  title3:{
+    width:500,
+  },
+  button: {
+    background: '#FFB6C1	',
+    width:150,
+    fontSize: 15,
+    borderRadius: 3,
+    border: 0,
+    height: 48,
+    textAlign: 'center',
+    paddingTop:7,
+},
 
 }));
 // infosContainer: {
