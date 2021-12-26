@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { CssBaseline } from '@material-ui/core';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Navbar, Products, Cart , About } from './components';
+import { Navbar, Products, Cart , About ,Home} from './components';
 import { commerce } from './lib/commerce';
 
 const App = () => {
@@ -50,8 +50,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetchProducts();
-    fetchCart();
+    // fetchProducts();
+    // fetchCart();
   }, []);
 
 
@@ -61,9 +61,10 @@ const App = () => {
         <CssBaseline />
         <Navbar totalItems={cart.total_items}  />
         <Routes>
-          <Route exact path="/" element={<Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />} />
+          <Route exact path="/" element={<Home onAddToCart={handleAddToCart} handleUpdateCartQty />} />
           <Route exact path="/cart" element={ <Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} /> } />
           <Route exact path="/about" element={ <About/> } />
+          <Route exact path="/products" element={ <Products onAddToCart={handleAddToCart} handleUpdateCartQty /> } />
         </Routes>
       </div>
     </Router>

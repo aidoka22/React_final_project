@@ -43,7 +43,7 @@ const PrimarySearchAppBar = ({ totalItems }) => {
           <Typography component={Link} to="/about"  className={classes.home} color="inherit">
             About
           </Typography>
-          <Typography component={Link} to="/"  className={classes.home} color="inherit">
+          <Typography component={Link} to="/products"  className={classes.home} color="inherit">
             Products
           </Typography>
           <div className={classes.grow} />

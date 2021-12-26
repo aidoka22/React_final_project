@@ -1,0 +1,9 @@
+export const FETCH_DETAILS = "FETCH_DETAILS";
+export const GET_CATEGORIES = "GET_CATEGORIES";
+export const GET_DETAILED_CATEGORIES = "GET_DETAILED_CATEGORIES"
+export const GET_PRODUCTS = "GET_PRODUCTS"
+export const API = "API";
+export const API_START = "API_START";
+export const API_END = "API_END";
+export const ACCESS_DENIED = "ACCESS_DENIED";
+export const API_ERROR = "API_ERROR";

@@ -1,29 +1,60 @@
 import React from 'react'
-import {Grid} from '@material-ui/core'
 import Product from '../Product/Product';
 import useStyles from './styles';
-import Slider from '../Slider/Slider';
+import { connect } from "react-redux";
+import { getMainCategories, getDetailedCategories, getProducts, getProductsNextPage } from "./../../actions";
+import { useEffect } from 'react';
 
-const Products = ({ products, onAddToCart }) => {
+const Products = (props, onAddToCart ) => {
   const classes = useStyles();
-  console.log(products)
-  if (!products.length) return <p>Loading...</p>;
+  const { data, products } = props
+  useEffect(() => {
+    props.getMainCategories()
+    props.getProducts()
+  }, [])
+
+  // console.log(products)
+  // console.log(data)
 
   return (
     <main >
-      <Slider />
       <div className={classes.content}>
         <div className={classes.toolbar} />
-        <Grid container justify="center" spacing={4}>
-          {products.map((product) => (
-          <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
-            <Product product={product} onAddToCart={onAddToCart} />
-          </Grid>
-          ))}
-        </Grid>
+        <div>
+          {
+            data.map(val=>{
+              return <Product product={val} onAddToCart={onAddToCart}/>
+            })
+          }
+        </div>
+        <div className={classes.toolbar} />
+        <div>
+          {
+            products.map(val => {
+              return <div key={val.id}>{val.name}</div>
+            })
+          }
+        </div>
+
+        <button onClick={() => props.getProductsNextPage(2)}>page 2</button>
       </div>
     </main>
   );
 };
 
-export default Products;
+const mapStateToProps = ({ data = [], detailed_data = [], products = [], isLoadingData = false }) => ({
+  data,
+  detailed_data,
+  isLoadingData,
+  products
+});
+
+export default connect(
+  mapStateToProps,
+  {
+    getMainCategories,
+    getDetailedCategories,
+    getProductsNextPage,
+    getProducts,
+  }
+)(Products);
