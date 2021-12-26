@@ -89,7 +89,6 @@ const Slider = () => {
             <div className={classes.infoContainer}>
               <div className={classes.title}>{item.title}</div>
               <div className={classes.desc}>{item.desc}</div>
-              <div className={classes.button}>SHOW NOW</div>
             </div>
           </Slide>
         ))}

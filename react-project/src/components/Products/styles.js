@@ -6,10 +6,17 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
-    root:{
-    }
   },
   root: {
     flexGrow: 1,
   },
+  items: {
+    textDecoration:'underline',
+    textAlign: 'center',
+  },
+  item:{
+    listStyleType: 'none',
+    display: 'inline-table',
+    padding:"0 20px 20px 20px",
+  }
 }));

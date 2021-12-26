@@ -1,69 +1,43 @@
 import { makeStyles } from '@material-ui/core/styles';
-
-const drawerWidth = 0;
-
 export default makeStyles((theme) => ({
-  appBar: {
-    boxShadow: 'none',
-    borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
-    [theme.breakpoints.up('sm')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
-  },
-  title: {
-    flexGrow: 1,
-    alignItems: 'center',
+  container: {
+    height:50,
+    boxShadow: '0 0 5px rgb(211,211,211)',
     display: 'flex',
-    textDecoration: 'none',
+    justifyContent: 'space-between',
+    paddingTop: '30px',
   },
-  home:{
-    marginLeft:theme.spacing(15),
-    size: '50%',
+  title:{
+    color: 'rgb(128,128,128)',
+    fontWeight: 'bold',
+    fontSize:25,
+    textAlign:'left',
+    cursor: 'pointer',
+    listStyleType: 'none',
+    textDecoration: 'none',
+    paddingRight:500,
+    paddingLeft:60,
+    marginTop:50,
+  },
+  home: {
+    color: 'grey',
+    fontWeight: 'bold',
+    fontSize:20,
+    marginTop:-10,
+    padding:30,
+    textAlign:'right',
+    cursor: 'pointer',
+    listStyleType: 'none',
     textDecoration: 'none',
   },
   image: {
-    marginRight: '10px',
+    position:'absolute',
+    marginLeft: '-60px',
+    marginTop:-15,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
-    },
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
+  cart:{
+    position:'absolute',
+    marginLeft: '1200px',
+    marginTop:-20,
+  }
 }));

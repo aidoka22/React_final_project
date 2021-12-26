@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { getMainCategories, getDetailedCategories, getProducts, getProductsNextPage } from "./../../actions";
 import { useEffect } from 'react';
 
-const Products = (props, onAddToCart ) => {
+const Products = (props, {onAddToCart} ) => {
   const classes = useStyles();
   const { data, products } = props
   useEffect(() => {
@@ -20,18 +20,18 @@ const Products = (props, onAddToCart ) => {
     <main >
       <div className={classes.content}>
         <div className={classes.toolbar} />
-        <div>
+        <div className={classes.items}>
           {
             data.map(val=>{
-              return <Product product={val} onAddToCart={onAddToCart}/>
+              return <li className={classes.item}>{val.name}</li>
             })
           }
         </div>
         <div className={classes.toolbar} />
-        <div>
+        <div className={classes.items}>
           {
             products.map(val => {
-              return <div key={val.id}>{val.name}</div>
+              return <Product product={val} onAddToCart={onAddToCart}/>
             })
           }
         </div>

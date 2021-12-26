@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   container: {
     width: 1200,
-    height: 580,
+    height: 540,
     marginTop: 60,
     marginLeft:34,
     display: 'flex',

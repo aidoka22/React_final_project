@@ -21,7 +21,7 @@ const App = () => {
 
   const handleAddToCart = async (productId, quantity) => {
     const item = await commerce.cart.add(productId, quantity);
-
+    console.log('added');
     setCart(item.cart);
   };
 
@@ -57,9 +57,8 @@ const App = () => {
 
   return (
     <Router>
+      <Navbar totalItems={cart.total_items}  />
       <div style={{ display: 'flex' }}>
-        <CssBaseline />
-        <Navbar totalItems={cart.total_items}  />
         <Routes>
           <Route exact path="/" element={<Home onAddToCart={handleAddToCart} handleUpdateCartQty />} />
           <Route exact path="/cart" element={ <Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} /> } />

@@ -1,6 +1,4 @@
 import React from 'react';
-import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@material-ui/core';
-
 import useStyles from './styles';
 
 const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
@@ -11,21 +9,27 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
   const handleRemoveFromCart = (lineItemId) => onRemoveFromCart(lineItemId);
 
   return (
-    <Card className={classes.cardItem}>
-      <CardMedia image={item.image.url} alt={item.name} className={classes.media} />
-      <CardContent className={classes.cardContent}>
-        <Typography variant="h6">{item.name}</Typography>
-        <Typography variant="h7">{item.line_total.formatted_with_symbol}</Typography>
-      </CardContent>
-      <CardActions className={classes.cardActions}>
+    <div className={classes.root}>
+    <img className={classes.media} src={item.image} alt={item.name} />
+    <div>
+      <div className={classes.cardContent}>
+        <h2 className={classes.title}>
+          {item.name}
+        </h2>
+        
+      </div>
+    </div>
+    <div className={classes.cardActions}>
         <div className={classes.buttons}>
-          <Button type="button" size="small" onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}>-</Button>
-          <Typography>&nbsp;{item.quantity}&nbsp;</Typography>
-          <Button type="button" size="small" onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}>+</Button>
+          <button className={classes.button} onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}>-</button>
+          <h2 className={classes.title}>
+          ${item.price} tenge
+          </h2>
+          <button className={classes.button} onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}>+</button>
         </div>
-        <Button variant="contained" type="button" color="secondary" onClick={() => handleRemoveFromCart(item.id)}>Remove</Button>
-      </CardActions>
-    </Card>
+        <button className={classes.button} onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
+    </div>
+  </div>
   );
 };
 
